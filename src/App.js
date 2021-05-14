@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import "./App.css";
 import CreateFriends from "./components/CreateFriends";
 import CreateUser from "./components/CreateUser";
-import RecordRound from "./components/RecordRound"
+import RecordRound from "./components/RecordRound";
 
 function App() {
   const [userName, setUserName] = useState("");
 
   const [friendsArray, setFriendsArray] = useState([]);
-// 1st item is date, 2nd is drink buyer, rest is drink reciever. 
-  const [orderHistory, setOrderHistory] = useState({
+  // 1st item is date, 2nd is drink buyer, rest is drink reciever.
+  const [orderHistory, setOrderHistory] = useState([{
     date: "test",
-    buyer: "",
-    recievers: []
-  })
+    buyer: "intial",
+    recievers: [],
+  }]);
 
   function handleChange(e) {
     setUserName(e.target.value);
@@ -25,41 +25,50 @@ function App() {
   }
 
   function onSubmitRecord(e) {
-    for (let i=0;i<e.target.length; i++) {
-      console.log(e.target[i].type)
-    }    
-    e.preventDefault()
-    console.log(e.target)
-    setOrderHistory({
-      date: Date.now(),
-      buyer: ""
-    })
-  }
+    e.preventDefault();
+    let recieversArray= []
 
-  
+    for (let i = 0; i < e.target.length; i++) {
+      if (e.target[i].type === "radio" && e.target[i].checked === true) {
+        setOrderHistory(prevOrderHistory => ({
+          ...prevOrderHistory,
+          buyer: e.target[i].value,
+          date: Date.now()
+        }));
+      };
+      if (e.target[i].type === 'checkbox' && e.target[i].checked === true) {
+        recieversArray.push(e.target[i].value)
+    }
+    setOrderHistory(prevOrderHistory => ({
+      ...prevOrderHistory,
+      recievers: recieversArray
+    }));
+    
+  }
+}
 
   return (
     <div>
-            {console.log(orderHistory.date)}
+      {console.log(orderHistory.date)}
 
-      <CreateUser 
-        userName={userName} 
-        handleChange={handleChange} />
+      <CreateUser userName={userName} handleChange={handleChange} />
       <CreateFriends
         friendsArray={friendsArray}
         handleChange={handleCreateFriends}
       />
 
       <br />
-      <RecordRound 
+      <RecordRound
         userName={userName}
         friendsArray={friendsArray}
         onSubmitRecord={onSubmitRecord}
-        />     
+      />
       <br />
-        {orderHistory.buyer}      
+      Drink buyer: {orderHistory.buyer}       <br />
+
+      Drinik reciver : {orderHistory.recievers}
     </div>
   );
-}
+};
 
 export default App;
