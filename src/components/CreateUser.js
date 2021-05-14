@@ -1,15 +1,17 @@
-function CreateUser() {
+function CreateUser(props) {
   return(
     <div>
         <form>
-          <input 
+          <label for="userName">
+            Your Name: {' '}
+          </label>
+          <input id="userName"
             type='text' 
-            placeholder='your name goes  here'
+            placeholder='your name goes here'
+            value={props.userName}
+            onChange={props.handleChange}
             >
           </input>
-          <button>
-            Submit
-          </button>
       </form>
     </div>
   )
