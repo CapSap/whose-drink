@@ -3,6 +3,7 @@ import "./App.css";
 import CreateFriends from "./components/CreateFriends";
 import CreateUser from "./components/CreateUser";
 import RecordRound from "./components/RecordRound";
+import RoundDisplay from './components/RoundDisplay'
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -10,8 +11,8 @@ function App() {
   const [friendsArray, setFriendsArray] = useState([]);
   // 1st item is date, 2nd is drink buyer, rest is drink reciever.
   const [orderHistory, setOrderHistory] = useState([{
-    date: "test",
-    buyer: "intial",
+    date: "",
+    buyer: "",
     recievers: [],
   }]);
 
@@ -26,7 +27,7 @@ function App() {
 
   function onSubmitRecord(e) {
     e.preventDefault();
-    let recieversArray= []
+    let recieversArray = []
 
     for (let i = 0; i < e.target.length; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
@@ -64,9 +65,7 @@ function App() {
         onSubmitRecord={onSubmitRecord}
       />
       <br />
-      Drink buyer: {orderHistory.buyer}       <br />
-
-      Drinik reciver : {orderHistory.recievers}
+     <RoundDisplay orderHistory={orderHistory}/>
     </div>
   );
 };
