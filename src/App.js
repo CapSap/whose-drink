@@ -27,7 +27,7 @@ function App() {
 
   function onSubmitRecord(e) {
     e.preventDefault();
-    let recieversArray = []
+    let newestRecieverArray = []
 
     for (let i = 0; i < e.target.length; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
@@ -38,14 +38,14 @@ function App() {
         }));
       };
       if (e.target[i].type === 'checkbox' && e.target[i].checked === true) {
-        recieversArray.push(e.target[i].value)
+        newestRecieverArray.push(e.target[i].value)
     }
     setOrderHistory(prevOrderHistory => ({
       ...prevOrderHistory,
-      recievers: recieversArray
+      recievers: newestRecieverArray
     }));
     
-  }
+  } console.log(orderHistory.recievers)
 }
 
   return (
