@@ -3,18 +3,20 @@ import "./App.css";
 import CreateFriends from "./components/CreateFriends";
 import CreateUser from "./components/CreateUser";
 import RecordRound from "./components/RecordRound";
-import RoundDisplay from './components/RoundDisplay'
+import RoundDisplay from "./components/RoundDisplay";
 
 function App() {
   const [userName, setUserName] = useState("");
 
   const [friendsArray, setFriendsArray] = useState([]);
   // 1st item is date, 2nd is drink buyer, rest is drink reciever.
-  const [orderHistory, setOrderHistory] = useState([{
-    date: "",
-    buyer: "",
-    recievers: [],
-  }]);
+  const [orderHistory, setOrderHistory] = useState([
+    {
+      date: "",
+      buyer: "intial buyer",
+      recievers: ["intial reciever test", "etc"],
+    },
+  ]);
 
   function handleChange(e) {
     setUserName(e.target.value);
@@ -22,35 +24,29 @@ function App() {
 
   function handleCreateFriends(e) {
     setFriendsArray(e.target.value.split(","));
-    console.log(e.target.value.split(","));
   }
 
   function onSubmitRecord(e) {
     e.preventDefault();
-    let newestRecieverArray = []
+    let latestRound = {};
+    let newestRecieverArray = [];
 
     for (let i = 0; i < e.target.length; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
-        setOrderHistory(prevOrderHistory => ({
-          ...prevOrderHistory,
-          buyer: e.target[i].value,
-          date: Date.now()
-        }));
-      };
-      if (e.target[i].type === 'checkbox' && e.target[i].checked === true) {
-        newestRecieverArray.push(e.target[i].value)
+        latestRound.buyer = e.target[i].value;
+        latestRound.date = Date.now();
+      }
+      if (e.target[i].type === "checkbox" && e.target[i].checked === true) {
+        newestRecieverArray.push(e.target[i].value);
+      }
+      latestRound.recievers = newestRecieverArray;
     }
-    setOrderHistory(prevOrderHistory => ({
-      ...prevOrderHistory,
-      recievers: newestRecieverArray
-    }));
-    
-  } console.log(orderHistory.recievers)
-}
+    setOrderHistory((prevOrderHistory) => [...prevOrderHistory, latestRound]);
+  }
 
   return (
     <div>
-      {console.log(orderHistory.date)}
+      {console.log(orderHistory)}
 
       <CreateUser userName={userName} handleChange={handleChange} />
       <CreateFriends
@@ -65,9 +61,9 @@ function App() {
         onSubmitRecord={onSubmitRecord}
       />
       <br />
-     <RoundDisplay orderHistory={orderHistory}/>
+      <RoundDisplay orderHistory={orderHistory} />
     </div>
   );
-};
+}
 
 export default App;
