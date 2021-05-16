@@ -14,7 +14,7 @@ function App() {
     {
       date: "",
       buyer: "intial buyer",
-      recievers: ["intial reciever test", "etc"],
+      receivers: ["intial reciever test", "etc"],
     },
   ]);
 
@@ -29,7 +29,7 @@ function App() {
   function onSubmitRecord(e) {
     e.preventDefault();
     let latestRound = {};
-    let newestRecieverArray = [];
+    let newestReceieverArray = [];
 
     for (let i = 0; i < e.target.length; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
@@ -37,17 +37,15 @@ function App() {
         latestRound.date = Date.now();
       }
       if (e.target[i].type === "checkbox" && e.target[i].checked === true) {
-        newestRecieverArray.push(e.target[i].value);
+        newestReceieverArray.push(e.target[i].value);
       }
-      latestRound.recievers = newestRecieverArray;
+      latestRound.receivers = newestReceieverArray;
     }
     setOrderHistory((prevOrderHistory) => [...prevOrderHistory, latestRound]);
   }
 
   return (
     <div>
-      {console.log(orderHistory)}
-
       <CreateUser userName={userName} handleChange={handleChange} />
       <CreateFriends
         friendsArray={friendsArray}
