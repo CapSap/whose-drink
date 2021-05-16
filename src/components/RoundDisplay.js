@@ -1,16 +1,20 @@
 function RoundDisplay(props) {
-  // this is what i gotta use eventually. something like this where state is an array
-  // for (let i = 0; i < props.orderHistory[i].length; i++) 
-  //   {
-  // }
-  return (
-    <div>
-      {props.orderHistory.date}
-      {props.orderHistory.buyer}
-      {props.orderHistory.recievers}
-    </div>
 
-  )
+  for (let i = 0; i < props.orderHistory.length; i++) 
+    { 
+      return (
+        <div>
+          <h2>Round {i + 1}:{' '}</h2>
+          <p>{Date(props.orderHistory[i].date)}</p>
+          <p>Drink Buyer: {props.orderHistory[i].buyer}</p>
+          <p>Drink Reciever: {props.orderHistory[i].recievers}</p>
+          
+        </div>
+      )
+  }
+  
+
+  
 }
 
 export default RoundDisplay
