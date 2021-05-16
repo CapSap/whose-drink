@@ -1,20 +1,13 @@
 function RoundDisplay(props) {
+  const roundArr = props.orderHistory.map((round, index) => (
+    <div>
+      <h3>Round {index + 1}:</h3>
 
-  for (let i = 0; i < props.orderHistory.length; i++) 
-    { 
-      return (
-        <div>
-          <h2>Round {i + 1}:{' '}</h2>
-          <p>{Date(props.orderHistory[i].date)}</p>
-          <p>Drink Buyer: {props.orderHistory[i].buyer}</p>
-          <p>Drink Reciever: {props.orderHistory[i].recievers}</p>
-          
-        </div>
-      )
-  }
-  
-
-  
+      <p>Buyer: {round.buyer}</p>
+      <p>Recievers: {round.receivers.map((receiver) => receiver)}</p>
+    </div>
+  ));
+  return <div>{roundArr}</div>;
 }
 
-export default RoundDisplay
+export default RoundDisplay;
