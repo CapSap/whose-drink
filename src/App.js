@@ -42,14 +42,14 @@ function App() {
       }
       latestRound.receivers = newestReceieverArray;
     }
-    console.log((orderHistory[0].date === "") ? "empty" : "notemmpt")
+    console.log(orderHistory[0].date === "" ? "empty" : "notemmpt");
 
     if (orderHistory[0].date === "") {
-      setOrderHistory([latestRound])
+      setOrderHistory([latestRound]);
     } else {
-
-    setOrderHistory((prevOrderHistory) => [...prevOrderHistory, latestRound]);
-  } }
+      setOrderHistory((prevOrderHistory) => [...prevOrderHistory, latestRound]);
+    }
+  }
 
   return (
     <div>
@@ -73,4 +73,3 @@ function App() {
 }
 
 export default App;
- 
