@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
     let latestRound = {};
     let newestReceieverArray = [];
-    console.log(e.target)
+
     for (let i = 0; i < e.target.length - 1; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
         latestRound.buyer = e.target[i].value;
@@ -42,8 +42,14 @@ function App() {
       }
       latestRound.receivers = newestReceieverArray;
     }
+    console.log((orderHistory[0].date === "") ? "empty" : "notemmpt")
+
+    if (orderHistory[0].date === "") {
+      setOrderHistory([latestRound])
+    } else {
+
     setOrderHistory((prevOrderHistory) => [...prevOrderHistory, latestRound]);
-  }
+  } }
 
   return (
     <div>
@@ -61,7 +67,7 @@ function App() {
       />
       <br />
       <RoundDisplay orderHistory={orderHistory} />
-      <DrinkSummary orderHistory={orderHistory} />
+      {/* <DrinkSummary orderHistory={orderHistory} /> */}
     </div>
   );
 }
