@@ -4,6 +4,7 @@ import CreateFriends from "./components/CreateFriends";
 import CreateUser from "./components/CreateUser";
 import RecordRound from "./components/RecordRound";
 import RoundDisplay from "./components/RoundDisplay";
+import DrinkSummary from "./components/DrinkSummary";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -13,8 +14,8 @@ function App() {
   const [orderHistory, setOrderHistory] = useState([
     {
       date: "",
-      buyer: "intial buyer",
-      receivers: ["intial reciever test", "etc"],
+      buyer: "",
+      receivers: [],
     },
   ]);
 
@@ -30,8 +31,8 @@ function App() {
     e.preventDefault();
     let latestRound = {};
     let newestReceieverArray = [];
-
-    for (let i = 0; i < e.target.length; i++) {
+    console.log(e.target)
+    for (let i = 0; i < e.target.length - 1; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
         latestRound.buyer = e.target[i].value;
         latestRound.date = Date.now();
@@ -60,8 +61,10 @@ function App() {
       />
       <br />
       <RoundDisplay orderHistory={orderHistory} />
+      <DrinkSummary orderHistory={orderHistory} />
     </div>
   );
 }
 
 export default App;
+ 
