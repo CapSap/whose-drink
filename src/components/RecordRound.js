@@ -1,7 +1,7 @@
 function RecordRound(props) {
   const drinkBuyer = [
     <>
-      <input type="radio" value={props.userName} name="buyer"></input>
+      <input type="radio" value={props.userName} name="buyer" required></input>
       <label>{props.userName}</label>
     </>,
     ...props.friendsArray.map((friendsName) => {
