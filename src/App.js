@@ -42,7 +42,6 @@ function App() {
       }
       latestRound.receivers = newestReceieverArray;
     }
-    console.log(orderHistory[0].date === "" ? "empty" : "notemmpt");
 
     if (orderHistory[0].date === "") {
       setOrderHistory([latestRound]);
@@ -67,7 +66,11 @@ function App() {
       />
       <br />
       <RoundDisplay orderHistory={orderHistory} />
-      {/* <DrinkSummary orderHistory={orderHistory} /> */}
+      <DrinkSummary
+        orderHistory={orderHistory}
+        userName={userName}
+        friendsArray={friendsArray}
+      />
     </div>
   );
 }
