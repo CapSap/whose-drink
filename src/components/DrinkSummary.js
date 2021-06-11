@@ -36,6 +36,7 @@ function DrinkSummary(props) {
         );
         setSummaryState({ buyer: buyer, count: count });
         console.log(summaryState);
+        // test commit and push
       }
     });
   }
