@@ -35,7 +35,7 @@ function RecordRound(props) {
       <h3>Who bought drinks? </h3>
       <form onSubmit={(e) => props.onSubmitRecord(e)}>
         {drinkBuyer}
-        <h3>Who recieved drinks? </h3>
+        <h3>Who received drinks? </h3>
         {drinkReciever}
         <button type="submit" style={{ color: "red" }}>
           Record Round of drinks!
