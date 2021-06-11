@@ -22,12 +22,18 @@ function DrinkSummary(props) {
         );
       }
     }
-    
+
     buyerSummary.push(
       everyone[i] + " purchased " + count + " drink for themselves "
     );
+    // if the setstate is in the above code block react doenst like it because it will trigger a re-redender loop
+    // maybe button on click get drink summary
+    // then on button click get drink summary again
+    // ie show no of rounds, who purchased drinks for who?
 
-    
+    // or always show drink summary?
+    // how? this functional component gets props from app state. it also takes these props and make some stuff out of it. as app state gets updated it will be passed to thsi app
+    // so? on load / componentDidMount load up this comp with a variable that holds some info that we loop through state and pull out some data?
   }
 
   return <div>{buyerSummary}</div>;
