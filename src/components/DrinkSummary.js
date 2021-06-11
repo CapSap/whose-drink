@@ -6,25 +6,11 @@ function DrinkSummary(props) {
   let everyone = props.friendsArray.concat(props.userName);
   let buyerSummary = [];
 
-  for (let i = 0; i < everyone.length; i++) {
+  for (let i = 0, n = everyone.length; i < n; i++) {
     let count = 0;
 
-    // for (let k = 0; k < props.orderHistory.length; k++) {
-    //   let { buyer, receivers } = props.orderHistory[k];
-    //   if (everyone[i] === buyer) {
-    //     for (let l = 0; l < receivers.length; l++) {
-    //       if (everyone[i] === receivers[l]) {
-    //         count++;
-    //       }
-    //     }
-    //   }
-    // }
-    // buyerSummary.push(
-    //   everyone[i] + " purchased " + count + " drink for themselves "
-    // );
-
-    props.orderHistory.forEach((x) => {
-      let { buyer, receivers } = x;
+    for (let k = 0; k < props.orderHistory.length; k++) {
+      let { buyer, receivers } = props.orderHistory[k];
       if (everyone[i] === buyer) {
         for (let l = 0; l < receivers.length; l++) {
           if (everyone[i] === receivers[l]) {
@@ -34,11 +20,14 @@ function DrinkSummary(props) {
         console.log(
           buyer + " purchase this many drinks for themselves:" + count
         );
-        setSummaryState({ buyer: buyer, count: count });
-        console.log(summaryState);
-        // test commit and push
       }
-    });
+    }
+    
+    buyerSummary.push(
+      everyone[i] + " purchased " + count + " drink for themselves "
+    );
+
+    
   }
 
   return <div>{buyerSummary}</div>;
