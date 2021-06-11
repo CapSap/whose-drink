@@ -1,4 +1,8 @@
+import React, { useState } from "react";
+
 function DrinkSummary(props) {
+  const [summaryState, setSummaryState] = useState([]);
+
   let everyone = props.friendsArray.concat(props.userName);
   let buyerSummary = [];
 
@@ -27,7 +31,11 @@ function DrinkSummary(props) {
             count++;
           }
         }
-        console.log(count);
+        console.log(
+          buyer + " purchase this many drinks for themselves:" + count
+        );
+        setSummaryState({ buyer: buyer, count: count });
+        console.log(summaryState);
       }
     });
   }
