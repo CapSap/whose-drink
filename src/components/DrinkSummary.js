@@ -17,15 +17,23 @@ function DrinkSummary(props) {
             count++;
           }
         }
-        console.log(
-          buyer + " purchase this many drinks for themselves:" + count
-        );
+        // console.log(
+        //   buyer + " purchase this many drinks for themselves:" + count
+        // );
+
+        // console.log(buyerSummary);
       }
+
+      // issue im having is buyersum was getting a new obj pushed with every cycle of loop. i want to update value only, not add a new object
+      console.log(count);
+      let obj = { [buyer]: count };
+      console.log(obj);
+      console.log(buyerSummary);
     }
 
-    buyerSummary.push(
-      everyone[i] + " purchased " + count + " drink for themselves "
-    );
+    // buyerSummary.push(
+    //   everyone[i] + " purchased " + count + " drink for themselves "
+    // );
     // if the setstate is in the above code block react doenst like it because it will trigger a re-redender loop
     // maybe button on click get drink summary
     // then on button click get drink summary again
@@ -36,7 +44,7 @@ function DrinkSummary(props) {
     // so? on load / componentDidMount load up this comp with a variable that holds some info that we loop through state and pull out some data?
   }
 
-  return <div>{buyerSummary}</div>;
+  return <div>test</div>;
 }
 
 export default DrinkSummary;
