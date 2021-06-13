@@ -49,24 +49,26 @@ function DrinkSummary(props) {
       </div>
     );
   }
-  console.log(render);
 
   // how many drinks did this person buy for this particular person?
   let drinkParticular = {};
+
+  // go through everyone array
   for (let i = 0; i < everyone.length; i++) {
-    // go through everyone array
+    drinkParticular[everyone[i]] = [];
+
     // go through the entire order history
-    // if everyone[i] is equal to buyer then
-
-    // and we got to
-
     for (let k = 0; k < props.orderHistory.length; k++) {
-      if (props.orderHistory[k].buyer === everyone[i])
-        for (let l = 0; l < props.orderHistory[k].receivers.length; l++) {
-          console.log(props.orderHistory[k].receivers[l]);
-        }
+      // checking everyone[i] against buyer
+      if (props.orderHistory[k].buyer === everyone[i]) {
+        drinkParticular[everyone[i]].push(props.orderHistory[k].receivers);
+      }
+      // push the recievers array and then later on count all the occurances of the people/persons
+
+      // and we got to
     }
   }
+  console.log(drinkParticular);
 
   // drinks consumed
 
