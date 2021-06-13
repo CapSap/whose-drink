@@ -55,18 +55,19 @@ function DrinkSummary(props) {
 
   // go through everyone array
   for (let i = 0; i < everyone.length; i++) {
+    let arr = [];
+
     drinkParticular[everyone[i]] = [];
 
     // go through the entire order history
     for (let k = 0; k < props.orderHistory.length; k++) {
-      // checking everyone[i] against buyer
+      // checking everyone[i] against buyer and then add the receivers to an array
       if (props.orderHistory[k].buyer === everyone[i]) {
-        drinkParticular[everyone[i]].push(props.orderHistory[k].receivers);
+        arr = arr.concat(props.orderHistory[k].receivers);
       }
       // push the recievers array and then later on count all the occurances of the people/persons
-
-      // and we got to
     }
+    drinkParticular[everyone[i]] = arr;
   }
   console.log(drinkParticular);
 
