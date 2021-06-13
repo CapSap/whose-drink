@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function DrinkSummary(props) {
   let everyone = props.friendsArray.concat(props.userName);
@@ -22,27 +22,32 @@ function DrinkSummary(props) {
       }
     }
   }
-  for (let key in selfBuyerSummary) {
-    render.push(
-      <div key={[key]}>
-        {[key]} purchased this many drinks for themselves:{" "}
-        {selfBuyerSummary[key]}
-      </div>
-    );
-  }
-  console.log(props.orderHistory);
+
+  // calculate total number of drinks purchased by individual person
   for (let i = 0; i < everyone.length; i++) {
     let count = 0;
     for (let k = 0; k < props.orderHistory.length; k++) {
       if (everyone[i] === props.orderHistory[k].buyer) {
         count = count + props.orderHistory[k].receivers.length;
+        totalPurchased[props.orderHistory[k].buyer] = count;
       }
     }
-    console.log(everyone[i] + count);
-    totalPurchased[everyone[i]] = count;
-    console.log(totalPurchased);
   }
-  // next features are: how many drinks purchased total?
+
+  // cal how many drinks purchased for other people
+  let drinksPurchasedForOthers = {};
+  for (let key in totalPurchased) {
+    drinksPurchasedForOthers[key] = totalPurchased[key] - selfBuyerSummary[key];
+    render.push(
+      <div key={key + "dpfo"}>
+        {key} purchased a total of {totalPurchased[key]} drinks;{" "}
+        {selfBuyerSummary[key]} for themselves, {drinksPurchasedForOthers[key]}{" "}
+        drinks for others
+      </div>
+    );
+  }
+  console.log(render);
+
   // how many drinks purchased for other people?
   // how many drinks did this person buy for this particular person?
   // drinks consumed
