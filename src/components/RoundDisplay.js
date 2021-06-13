@@ -5,11 +5,9 @@ function RoundDisplay(props) {
     } else {
       return (
         <div key={round.date}>
-          <h3 key={round.date}>Round {index + 1}:</h3>
-          <p key={round.date}>
-            Buyer: {round.buyer ? round.buyer : "No-buyer"}
-          </p>
-          <p key={round.date}>
+          <h3>Round {index + 1}:</h3>
+          <p>Buyer: {round.buyer ? round.buyer : "No-buyer"}</p>
+          <p>
             Receiver(s): {round.receivers.map((receiver) => " " + receiver)}
           </p>
         </div>

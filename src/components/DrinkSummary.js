@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 function DrinkSummary(props) {
   let everyone = props.friendsArray.concat(props.userName);
-  let buyerSummary = {};
+  let selfBuyerSummary = {};
   let render = [];
+  let totalPurchases = {};
 
   // count how many drinks a person bought for themselves and store in buyerSummary
   for (let i = 0, n = everyone.length; i < n; i++) {
@@ -17,17 +18,19 @@ function DrinkSummary(props) {
             count++;
           }
         }
-        buyerSummary[buyer] = count;
+        selfBuyerSummary[buyer] = count;
       }
     }
   }
-  for (let key in buyerSummary) {
+  for (let key in selfBuyerSummary) {
     render.push(
       <div key={[key]}>
-        {[key]} purchased this many drinks for themselves: {buyerSummary[key]}
+        {[key]} purchased this many drinks for themselves:{" "}
+        {selfBuyerSummary[key]}
       </div>
     );
   }
+  console.log(props.orderHistory);
 
   // next features are: how many drinks purchased total?
   // how many drinks purchased for other people?
