@@ -2,7 +2,7 @@ function CreateUser(props) {
   return (
     <div>
       <form>
-        <label for="userName">Your Name: </label>
+        <label htmlFor="userName">Your Name: </label>
         <input
           id="userName"
           type="text"
