@@ -23,7 +23,7 @@ function DrinkSummary(props) {
   }
   for (let key in buyerSummary) {
     render.push(
-      <div>
+      <div key={[key]}>
         {[key]} purchased this many drinks for themselves: {buyerSummary[key]}
       </div>
     );
