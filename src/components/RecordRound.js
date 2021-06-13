@@ -22,7 +22,7 @@ function RecordRound(props) {
     ...props.friendsArray.map((friendsName) => {
       return (
         <div key={friendsName + "R"}>
-          <input type="checkbox" name="reciever" />
+          <input type="checkbox" value={friendsName} name="reciever" />
           <label>{friendsName}</label>
         </div>
       );
