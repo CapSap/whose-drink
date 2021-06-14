@@ -52,6 +52,7 @@ function DrinkSummary(props) {
 
   // how many drinks did this person buy for this particular person?
   let drinkParticular = {};
+  let drinkParRender = [];
 
   // go through everyone array
   for (let i = 0; i < everyone.length; i++) {
@@ -67,13 +68,34 @@ function DrinkSummary(props) {
       }
       // push the recievers array and then later on count all the occurances of the people/persons
     }
-    drinkParticular[everyone[i]] = arr;
+    let occurrences = {};
+    for (let l = 0; l < arr.length; l++) {
+      occurrences[arr[l]] = (occurrences[arr[l]] || 0) + 1;
+      drinkParRender.push(
+        <div>
+          {everyone[i]} purchased {occurrences[arr[l]]}
+        </div>
+      );
+    }
+    console.log(occurrences);
+    drinkParticular[everyone[i]] = occurrences;
+    for (let key in drinkParticular) {
+      // console.log(
+      //   [key] + " purchased " + drinkParticular[key] + " for " + [key]
+      // );
+    }
   }
-  console.log(drinkParticular);
+  // console.log(drinkParticular);
+  // console.log(drinkParRender);
 
   // drinks consumed
 
-  return <div>{render}</div>;
+  return (
+    <div>
+      {render}
+      {drinkParRender}
+    </div>
+  );
 }
 
 export default DrinkSummary;
