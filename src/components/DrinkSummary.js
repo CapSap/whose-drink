@@ -51,14 +51,11 @@ function DrinkSummary(props) {
   }
 
   // how many drinks did this person buy for this particular person?
-  let drinkParticular = {};
   let drinkParRender = [];
 
   // go through everyone array
   for (let i = 0; i < everyone.length; i++) {
     let arr = [];
-
-    drinkParticular[everyone[i]] = [];
 
     // go through the entire order history
     for (let k = 0; k < props.orderHistory.length; k++) {
@@ -79,20 +76,7 @@ function DrinkSummary(props) {
         </div>
       );
     }
-
-    console.log(everyone[i]);
-    console.log(occurrences);
-    drinkParticular[everyone[i]] = occurrences;
-    for (let key in drinkParticular) {
-      // console.log(
-      //   [key] + " purchased " + drinkParticular[key] + " for " + [key]
-      // );
-    }
   }
-  // console.log(drinkParticular);
-  // console.log(drinkParRender);
-
-  // drinks consumed
 
   return (
     <div>
