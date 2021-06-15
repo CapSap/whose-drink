@@ -67,11 +67,13 @@ function DrinkSummary(props) {
     }
     let occurrences = {};
     for (let l = 0; l < arr.length; l++) {
+      console.log(arr);
+      console.log(occurrences[arr[l]] || 0);
       occurrences[arr[l]] = (occurrences[arr[l]] || 0) + 1;
     }
     for (let key in occurrences) {
       drinkParRender.push(
-        <div>
+        <div key={everyone[i] + "BuyFor" + [key]}>
           {everyone[i]} purchased {occurrences[key]} drinks for {[key]}
         </div>
       );
@@ -80,8 +82,10 @@ function DrinkSummary(props) {
 
   return (
     <div>
-      {render}
+      <h3>Summary:</h3>
+      {render} <br />
       {drinkParRender}
+      <br />
     </div>
   );
 }
