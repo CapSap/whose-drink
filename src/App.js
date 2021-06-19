@@ -35,7 +35,7 @@ function App() {
     for (let i = 0; i < e.target.length - 1; i++) {
       if (e.target[i].type === "radio" && e.target[i].checked === true) {
         latestRound.buyer = e.target[i].value;
-        latestRound.date = Date.now();
+        latestRound.date = new Date();
       }
       if (e.target[i].type === "checkbox" && e.target[i].checked === true) {
         newestReceieverArray.push(e.target[i].value);
@@ -52,6 +52,10 @@ function App() {
 
   return (
     <div>
+      <div>
+        <h1>Drink recorder</h1>
+        <p>Track drink purchases below.</p>
+      </div>
       <CreateUser userName={userName} handleChange={handleChange} />
       <CreateFriends
         friendsArray={friendsArray}

@@ -5,11 +5,13 @@ function RoundDisplay(props) {
     } else {
       return (
         <div key={round.date}>
+          {console.log(round.date)}
           <h3>Round {index + 1}:</h3>
           <p>Buyer: {round.buyer ? round.buyer : "No-buyer"}</p>
           <p>
             Receiver(s): {round.receivers.map((receiver) => " " + receiver)}
           </p>
+          <p>{round.date.toLocaleString()}</p>
         </div>
       );
     }
