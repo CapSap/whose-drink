@@ -4,6 +4,14 @@ function DrinkSummary(props) {
   let everyone = props.friendsArray.concat(props.userName);
   let render = [];
 
+  // get unique billmurr image for each person
+  let billMurray = [];
+  for (let i = 0; i < everyone.length; i++) {
+    billMurray[everyone[i]] = "https://www.fillmurray.com/g/10" + i + "/10" + i;
+  }
+  console.log(everyone);
+  console.log(billMurray);
+
   // count how many drinks a person bought for themselves and store in buyerSummary
   let selfBuyerSummary = {};
 
@@ -43,6 +51,7 @@ function DrinkSummary(props) {
     drinksPurchasedForOthers[key] = totalPurchased[key] - selfBuyerSummary[key];
     render.push(
       <div key={key + "dpfo"}>
+        <img src={billMurray[key]}></img>
         {key} purchased a total of {totalPurchased[key]} drinks;{" "}
         {selfBuyerSummary[key]} for themselves, {drinksPurchasedForOthers[key]}{" "}
         drinks for others
@@ -67,13 +76,14 @@ function DrinkSummary(props) {
     }
     let occurrences = {};
     for (let l = 0; l < arr.length; l++) {
-      console.log(arr);
-      console.log(occurrences[arr[l]] || 0);
+      // console.log(arr);
+      // console.log(occurrences[arr[l]] || 0);
       occurrences[arr[l]] = (occurrences[arr[l]] || 0) + 1;
     }
     for (let key in occurrences) {
       drinkParRender.push(
         <div key={everyone[i] + "BuyFor" + [key]}>
+          <img src={billMurray[everyone[i]]}></img>
           {everyone[i]} purchased {occurrences[key]} drinks for {[key]}
         </div>
       );
