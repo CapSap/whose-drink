@@ -7,7 +7,8 @@ function DrinkSummary(props) {
   // get unique billmurr image for each person
   let billMurray = [];
   for (let i = 0; i < everyone.length; i++) {
-    billMurray[everyone[i]] = "https://www.fillmurray.com/g/10" + i + "/10" + i;
+    billMurray[everyone[i]] =
+      "https://www.fillmurray.com/g/" + 3 + i + "/" + 3 + i;
   }
   console.log(everyone);
   console.log(billMurray);
@@ -83,8 +84,14 @@ function DrinkSummary(props) {
     for (let key in occurrences) {
       drinkParRender.push(
         <div key={everyone[i] + "BuyFor" + [key]}>
-          <img src={billMurray[everyone[i]]} alt="bill murray logo"></img>
-          {everyone[i]} purchased {occurrences[key]} drinks for {[key]}
+          <p>
+            <img
+              src={billMurray[everyone[i]]}
+              alt={everyone[i] + " logo"}
+            ></img>{" "}
+            {everyone[i]} purchased {occurrences[key]} drinks for{" "}
+            <img src={billMurray[key]} alt={[key] + " logo"}></img> {[key]}
+          </p>
         </div>
       );
     }
