@@ -1,6 +1,6 @@
 function AddPeople(props) {
   return (
-    <div>
+    <div className="form-column">
       <form>
         <label htmlFor="userName">Your Name: </label>
         <input

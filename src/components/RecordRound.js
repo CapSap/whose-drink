@@ -32,14 +32,24 @@ function RecordRound(props) {
   return (
     <div>
       <h2>Record rounds here</h2>
-      <h3>Who bought drinks? </h3>
       <form onSubmit={(e) => props.onSubmitRecord(e)}>
-        {drinkBuyer}
-        <h3>Who received drinks? </h3>
-        {drinkReciever}
-        <button type="submit" style={{ color: "red" }}>
-          Record Round of drinks!
-        </button>
+        <div className="recorder-container">
+          <div className="recorder-item">
+            <h3>Who bought drinks? </h3>
+            {drinkBuyer}
+          </div>
+          <div className="recorder-item">
+            <h3>Who received drinks? </h3>
+            {drinkReciever}
+          </div>
+          <button
+            className="recorder-button"
+            type="submit"
+            style={{ color: "red" }}
+          >
+            Record Round of drinks!
+          </button>
+        </div>
       </form>
     </div>
   );

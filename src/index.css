@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
   line-height: 1.5em;
+  text-align: center;
 }
 
 code {
@@ -16,4 +17,20 @@ code {
 
 .text-input {
   min-width: 300px;
+}
+
+p {
+  margin: 0;
+}
+
+.recorder-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recorder-item {
+  flex-basis: 50%;
+}
+.recorder-button {
 }
