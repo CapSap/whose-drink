@@ -5,7 +5,7 @@ import CreateUser from "./components/CreateUser";
 import RecordRound from "./components/RecordRound";
 import RoundDisplay from "./components/RoundDisplay";
 import DrinkSummary from "./components/DrinkSummary";
-
+import Title from "./components/Title";
 function App() {
   const [userName, setUserName] = useState("");
 
@@ -52,10 +52,7 @@ function App() {
 
   return (
     <div>
-      <div>
-        <h1>Drink recorder</h1>
-        <p>Track drink purchases below.</p>
-      </div>
+      <Title />
       <CreateUser userName={userName} handleChange={handleChange} />
       <CreateFriends
         friendsArray={friendsArray}
