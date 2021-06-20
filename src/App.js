@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import CreateFriends from "./components/CreateFriends";
-import CreateUser from "./components/CreateUser";
 import RecordRound from "./components/RecordRound";
 import RoundDisplay from "./components/RoundDisplay";
 import DrinkSummary from "./components/DrinkSummary";
 import Title from "./components/Title";
+import AddPeople from "./components/AddPeople.js";
 function App() {
   const [userName, setUserName] = useState("");
 
@@ -53,10 +52,11 @@ function App() {
   return (
     <div>
       <Title />
-      <CreateUser userName={userName} handleChange={handleChange} />
-      <CreateFriends
+      <AddPeople
+        userName={userName}
+        handleUserChange={handleChange}
         friendsArray={friendsArray}
-        handleChange={handleCreateFriends}
+        handleFriendChange={handleCreateFriends}
       />
 
       <br />
