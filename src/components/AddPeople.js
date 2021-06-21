@@ -2,6 +2,14 @@ function AddPeople(props) {
   return (
     <div className="form-column">
       <form>
+        {/* <!-- Prevent implicit submission of the form --> */}
+        <button
+          className="prevent-enter-button"
+          type="submit"
+          disabled
+          aria-hidden="true"
+          style={{ display: "none" }}
+        ></button>
         <label htmlFor="userName">Your Name: </label>
         <input
           id="userName"
