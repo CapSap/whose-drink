@@ -28,9 +28,10 @@ p {
 
 .recorder-item {
   flex-basis: 50%;
+  max-width: 300px;
 }
 .recorder-button {
-  flex-grow: 1;
+  flex: 1 0 100%;
 }
 
 /* squish the 2 cols so that they are not so big and far apart. make them take up a narrow slot in the page. like a mobile view.
