@@ -30,7 +30,7 @@ function RecordRound(props) {
   ];
 
   return (
-    <div>
+    <div className="record-round-cont">
       <h2>Record rounds here</h2>
       <form onSubmit={(e) => props.onSubmitRecord(e)}>
         <div className="recorder-container">

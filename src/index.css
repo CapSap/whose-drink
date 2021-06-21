@@ -23,12 +23,11 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 60%;
 }
 
 .recorder-item {
-  flex-basis: 50%;
-  max-width: 300px;
+  flex-basis: 40%;
+  padding: 2em;
 }
 .recorder-button {
   flex: 1 0 100%;
