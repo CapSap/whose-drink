@@ -50,7 +50,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="appCont">
       <Title />
       <AddPeople
         userName={userName}
@@ -59,13 +59,11 @@ function App() {
         handleFriendChange={handleCreateFriends}
       />
 
-      <br />
       <RecordRound
         userName={userName}
         friendsArray={friendsArray}
         onSubmitRecord={onSubmitRecord}
       />
-      <br />
       <RoundDisplay orderHistory={orderHistory} />
       <DrinkSummary
         orderHistory={orderHistory}
