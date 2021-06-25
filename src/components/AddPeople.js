@@ -1,7 +1,7 @@
 function AddPeople(props) {
   return (
-    <div className="form-column">
-      <form>
+    <div className="add-people-container">
+      <form className="add-people-item">
         {/* <!-- Prevent implicit submission of the form --> */}
         <button
           type="submit"
@@ -11,7 +11,7 @@ function AddPeople(props) {
         ></button>
         <label htmlFor="userName">Your Name: </label>
         <input
-          className="addPeopleInput"
+          className="add-people-input"
           id="userName"
           type="text"
           placeholder="Your name goes here"
@@ -19,15 +19,15 @@ function AddPeople(props) {
           onChange={props.handleUserChange}
         ></input>
       </form>
-      <form>
+      <form className="add-people-item">
         <label htmlFor="createFriends">Your Mates: </label>
 
-        <input
-          className="addPeopleInput"
+        <textarea
+          className="add-people-input"
           type="text"
           placeholder="who are you with? (seperate with a comma) e.g. Frank, billy, etc"
           onChange={props.handleFriendChange}
-        ></input>
+        ></textarea>
       </form>
     </div>
   );

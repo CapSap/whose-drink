@@ -8,7 +8,7 @@ function RoundDisplay(props) {
       );
     } else {
       return (
-        <div className="round-display" key={round.date}>
+        <div className="round-display-item" key={round.date}>
           <h3>Round {index + 1}:</h3>
           <p>Buyer: {round.buyer ? round.buyer : "No-buyer"}</p>
           <p>
@@ -20,7 +20,7 @@ function RoundDisplay(props) {
     }
   });
 
-  return <div>{roundArr}</div>;
+  return <div className="round-display">{roundArr}</div>;
 }
 
 export default RoundDisplay;
