@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: "Sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -5,9 +8,7 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
   line-height: 1.5em;
-  text-align: center;
 }
 
 code {
@@ -18,20 +19,60 @@ code {
 p {
   margin: 0;
 }
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+/* add people css */
+
+.add-people-container {
+  display: flex;
+  justify-content: center;
+  padding: 1.5em 10em;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1em;
+}
+.add-people-item {
+  padding: 1em 0 1em 0;
+  flex: 1 1 40%;
+}
+.add-people-item label {
+  display: block;
+}
+.add-people-input {
+  min-height: 2em;
+  min-width: 20rem;
+}
+
+/* RoundRecorder css */
 
 .recorder-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 10%;
 }
 
 .recorder-item {
-  flex-basis: 40%;
-  padding: 2em;
+  flex-basis: 50%;
 }
 .recorder-button {
-  flex: 1 0 100%;
+  flex: 1 0 60%;
+  margin: 0 12.25%;
 }
 
-/* squish the 2 cols so that they are not so big and far apart. make them take up a narrow slot in the page. like a mobile view.
-also make the button bigger */
+/* Round dispaly CSS */
+.round-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  justify-content: center;
+}
+.round-display-item {
+  padding: 2em;
+  border: 10px solid blue;
+  flex: 0 1 20em;
+}
