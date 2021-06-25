@@ -4,7 +4,6 @@ function AddPeople(props) {
       <form>
         {/* <!-- Prevent implicit submission of the form --> */}
         <button
-          className="prevent-enter-button"
           type="submit"
           disabled
           aria-hidden="true"
@@ -12,18 +11,21 @@ function AddPeople(props) {
         ></button>
         <label htmlFor="userName">Your Name: </label>
         <input
+          className="addPeopleInput"
           id="userName"
           type="text"
-          placeholder="your name goes here"
+          placeholder="Your name goes here"
           value={props.userName}
           onChange={props.handleUserChange}
         ></input>
       </form>
       <form>
         <label htmlFor="createFriends">Your Mates: </label>
+
         <input
+          className="addPeopleInput"
           type="text"
-          placeholder="who are you with? (seperate with a comma)"
+          placeholder="who are you with? (seperate with a comma) e.g. Frank, billy, etc"
           onChange={props.handleFriendChange}
         ></input>
       </form>

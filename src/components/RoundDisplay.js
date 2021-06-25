@@ -1,10 +1,14 @@
 function RoundDisplay(props) {
   const roundArr = props.orderHistory.map((round, index) => {
     if (round.date === "") {
-      return <div key="intial">no recorded entries</div>;
+      return (
+        <div className="round-display" key="intial">
+          <p>No recorded entries. Get some drinks!</p>
+        </div>
+      );
     } else {
       return (
-        <div key={round.date}>
+        <div className="round-display" key={round.date}>
           <h3>Round {index + 1}:</h3>
           <p>Buyer: {round.buyer ? round.buyer : "No-buyer"}</p>
           <p>

@@ -98,7 +98,7 @@ function DrinkSummary(props) {
   }
 
   return (
-    <div>
+    <div className="drink-summary">
       <h3>Summary:</h3>
       {render} <br />
       {drinkParRender}
