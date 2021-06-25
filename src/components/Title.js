@@ -1,8 +1,8 @@
 function Title() {
   return (
-    <div className="title">
+    <div className="title-container">
       <h1>Whose round is it anyway?</h1>
-      <h3 className="title-text">Track drink purchases below</h3>
+      <h2 className="title-text">Track drink purchases below</h2>
     </div>
   );
 }
