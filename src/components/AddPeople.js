@@ -25,7 +25,7 @@ function AddPeople(props) {
         <textarea
           className="add-people-input"
           type="text"
-          placeholder="who are you with? (seperate with a comma) e.g. Frank, billy, etc"
+          placeholder="Who are you with? (seperate with a comma) e.g. Frank, billy, etc"
           onChange={props.handleFriendChange}
         ></textarea>
       </form>
