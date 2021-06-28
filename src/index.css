@@ -1,6 +1,18 @@
 * {
   box-sizing: border-box;
 }
+textarea,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  min-height: inherit;
+  min-width: inherit;
+  margin: inherit;
+  box-sizing: border-box;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: "Sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -9,11 +21,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5em;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 p {
@@ -35,15 +42,18 @@ h3 {
   gap: 1em;
 }
 .add-people-item {
-  padding: 1em 0 1em 0;
   flex: 1 1 40%;
+  padding: 1em 0 1em 0;
 }
 .add-people-item label {
   display: block;
 }
 .add-people-input {
-  min-height: 2em;
+  min-height: 4rem;
   min-width: 20rem;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.4em;
 }
 
 /* RoundRecorder css */
