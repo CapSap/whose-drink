@@ -2,13 +2,13 @@ function RecordRound(props) {
   const drinkBuyer = [
     <div key="buyerbuyer">
       <input type="radio" value={props.userName} name="buyer" required></input>
-      <label>{props.userName}</label>
+      <label> {props.userName}</label>
     </div>,
     ...props.friendsArray.map((friendsName) => {
       return (
         <div key={friendsName + "B"}>
           <input type="radio" value={friendsName} name="buyer" />
-          <label>{friendsName}</label>
+          <label> {friendsName}</label>
         </div>
       );
     }),
@@ -17,13 +17,13 @@ function RecordRound(props) {
   const drinkReciever = [
     <div key="buyer">
       <input type="checkbox" value={props.userName} name="reciever"></input>
-      <label>{props.userName}</label>
+      <label> {props.userName}</label>
     </div>,
     ...props.friendsArray.map((friendsName) => {
       return (
         <div key={friendsName + "R"}>
           <input type="checkbox" value={friendsName} name="reciever" />
-          <label>{friendsName}</label>
+          <label> {friendsName}</label>
         </div>
       );
     }),

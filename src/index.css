@@ -68,6 +68,9 @@ h3 {
 .recorder-item {
   flex-basis: 50%;
 }
+.recorder-item div {
+  padding-left: 40%;
+}
 .recorder-button {
   flex: 1 0 60%;
   margin: 0 12.25%;
