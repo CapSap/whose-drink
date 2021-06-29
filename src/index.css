@@ -74,6 +74,7 @@ h3 {
 .recorder-button {
   flex: 1 0 60%;
   margin: 0 12.25%;
+  min-height: 2em;
 }
 
 /* Round dispaly CSS */
