@@ -31,6 +31,12 @@ h2,
 h3 {
   text-align: center;
 }
+/* button {
+  text-align: center;
+  display: block;
+  margin: auto;
+} */
+
 /* add people css */
 
 .add-people-container {
@@ -63,6 +69,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 10%;
+  padding-bottom: 1em;
 }
 
 .recorder-item {
@@ -73,11 +80,20 @@ h3 {
 }
 .recorder-button {
   flex: 1 0 60%;
-  margin: 0 12.25%;
+  font-size: 1.5em;
+  margin: 1em 12.25%;
   min-height: 2em;
+  padding: 0em;
+  cursor: pointer;
 }
 
 /* Round dispaly CSS */
+
+.show-hide-btn {
+  margin: auto;
+  display: block;
+}
+
 .round-display {
   display: flex;
   flex-wrap: wrap;
