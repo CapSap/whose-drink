@@ -42,11 +42,7 @@ function RecordRound(props) {
             <h3>Who received drinks? </h3>
             {drinkReciever}
           </div>
-          <button
-            className="recorder-button"
-            type="submit"
-            style={{ color: "red" }}
-          >
+          <button className="recorder-button" type="submit">
             Record Round of drinks!
           </button>
         </div>

@@ -30,7 +30,9 @@ function RoundDisplay(props) {
 
   return (
     <div>
-      <button onClick={() => onClick()}>Show/Hide detailed Rounds</button>
+      <button className="show-hide-btn" onClick={() => onClick()}>
+        Show/Hide detailed Rounds
+      </button>
       {render ? <div className="round-display">{roundArr}</div> : null}
     </div>
   );
