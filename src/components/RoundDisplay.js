@@ -1,4 +1,8 @@
+import React, { useState } from "react";
+
 function RoundDisplay(props) {
+  const [render, setRender] = useState(true);
+
   const roundArr = props.orderHistory.map((round, index) => {
     if (round.date === "") {
       return (
@@ -20,7 +24,16 @@ function RoundDisplay(props) {
     }
   });
 
-  return <div className="round-display">{roundArr}</div>;
+  function onClick() {
+    setRender(!render);
+  }
+
+  return (
+    <div>
+      <button onClick={() => onClick()}>Show/Hide detailed Rounds</button>
+      {render ? <div className="round-display">{roundArr}</div> : null}
+    </div>
+  );
 }
 
 export default RoundDisplay;
