@@ -90,7 +90,7 @@ h3 {
 /* Round dispaly CSS */
 
 .show-hide-btn {
-  margin: auto;
+  margin: auto auto 1em auto;
   display: block;
 }
 
