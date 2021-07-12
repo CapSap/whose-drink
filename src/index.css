@@ -31,11 +31,11 @@ h2,
 h3 {
   text-align: center;
 }
-/* button {
-  text-align: center;
-  display: block;
-  margin: auto;
-} */
+
+img {
+  height: 30px;
+  width: 30px;
+}
 
 /* add people css */
 
@@ -105,4 +105,13 @@ h3 {
   padding: 2em;
   border: 10px solid blue;
   flex: 0 1 20em;
+}
+
+/* summary  */
+
+.drink-sum-item-cont {
+  display: inline-block;
+}
+.drink-sum-item-cont li {
+  list-style: none;
 }
