@@ -11,15 +11,6 @@ function DrinkSummary(props) {
       "https://www.fillmurray.com/g/" + 3 + i + "/" + 3 + i;
   }
 
-  let billMurrayReactInlineStyle = billMurray.map((x) => {
-    return "testing";
-  });
-  // billMurrar is an object not an array!. give up and leave the img inside the li
-
-  console.log(typeof billMurray);
-  // console.log(everyone);
-  console.log(billMurray);
-
   // count how many drinks a person bought for themselves and store in buyerSummary
   let selfBuyerSummary = {};
 
@@ -58,11 +49,7 @@ function DrinkSummary(props) {
   for (let key in totalPurchased) {
     drinksPurchasedForOthers[key] = totalPurchased[key] - selfBuyerSummary[key];
     render.push(
-      <li
-        key={key + "dpfo"}
-        className="drink-sum-item-cont"
-        style={{ listStyleImage: "URL(billMurray[key])" }}
-      >
+      <li key={key + "dpfo"} className="drink-sum-item-cont">
         <img src={billMurray[key]} alt="bill murray logo"></img> {key} purchased
         a total of {totalPurchased[key]} drinks; {selfBuyerSummary[key]} for
         themselves, {drinksPurchasedForOthers[key]} drinks for others
@@ -87,34 +74,30 @@ function DrinkSummary(props) {
     }
     let occurrences = {};
     for (let l = 0; l < arr.length; l++) {
-      // console.log(arr);
-      // console.log(occurrences[arr[l]] || 0);
       occurrences[arr[l]] = (occurrences[arr[l]] || 0) + 1;
     }
     for (let key in occurrences) {
       drinkParRender.push(
-        <div key={everyone[i] + "BuyFor" + [key]}>
-          <p>
-            <img
-              src={billMurray[everyone[i]]}
-              alt={everyone[i] + " logo"}
-            ></img>{" "}
-            {everyone[i]} purchased {occurrences[key]} drinks for{" "}
-            <img src={billMurray[key]} alt={[key] + " logo"}></img> {[key]}
-          </p>
-        </div>
+        <li key={everyone[i] + "BuyFor" + [key]}>
+          <img src={billMurray[everyone[i]]} alt={everyone[i] + " logo"}></img>{" "}
+          {everyone[i]} purchased {occurrences[key]} drinks for{" "}
+          <img src={billMurray[key]} alt={[key] + " logo"}></img> {[key]}
+        </li>
       );
     }
   }
-
-  return (
-    <div className="drink-summary">
-      <h3>Summary:</h3>
-      <ul>{render}</ul> <br />
-      {drinkParRender}
-      <br />
-    </div>
-  );
+  if (props.orderHistory[0].date === "") {
+    return null;
+  } else {
+    return (
+      <div className="drink-summary">
+        <h3>Summary:</h3>
+        <ul>{render}</ul> <br />
+        <ul> {drinkParRender}</ul>
+        <br />
+      </div>
+    );
+  }
 }
 
 export default DrinkSummary;
