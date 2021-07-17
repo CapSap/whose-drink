@@ -35,6 +35,8 @@ h3 {
 img {
   height: 30px;
   width: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* add people css */
@@ -108,10 +110,22 @@ img {
 }
 
 /* summary  */
-
-.drink-sum-item-cont {
-  display: inline-block;
+.drink-summary {
+  margin: auto;
+  max-width: 1300px;
 }
-.drink-sum-item-cont li {
-  list-style: none;
+.drink-summary h2 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 19.9%;
+  padding-right: 19.9%;
+  font-size: 1.2rem;
+}
+
+li {
+  border: 1px solid aqua;
 }

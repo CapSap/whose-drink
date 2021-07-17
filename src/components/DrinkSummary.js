@@ -8,7 +8,7 @@ function DrinkSummary(props) {
   let billMurray = [];
   for (let i = 0; i < everyone.length; i++) {
     billMurray[everyone[i]] =
-      "https://www.fillmurray.com/g/" + 3 + i + "/" + 3 + i;
+      "https://www.fillmurray.com/" + 3 + i + "/" + 3 + i;
   }
 
   // count how many drinks a person bought for themselves and store in buyerSummary
@@ -91,9 +91,9 @@ function DrinkSummary(props) {
   } else {
     return (
       <div className="drink-summary">
-        <h3>Summary:</h3>
-        <ul>{render}</ul> <br />
-        <ul> {drinkParRender}</ul>
+        <h2>Summary:</h2>
+        <ul className="summary-list">{render}</ul> <br />
+        <ul className="summary-detail"> {drinkParRender}</ul>
         <br />
       </div>
     );
