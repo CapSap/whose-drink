@@ -49,7 +49,7 @@ function DrinkSummary(props) {
   for (let key in totalPurchased) {
     drinksPurchasedForOthers[key] = totalPurchased[key] - selfBuyerSummary[key];
     render.push(
-      <li key={key + "dpfo"} className="drink-sum-item-cont">
+      <li key={key + "dpfo"} className="summary-item">
         <img src={billMurray[key]} alt="bill murray logo"></img> {key} purchased
         a total of {totalPurchased[key]} drinks; {selfBuyerSummary[key]} for
         themselves, {drinksPurchasedForOthers[key]} drinks for others
@@ -78,8 +78,11 @@ function DrinkSummary(props) {
     }
     for (let key in occurrences) {
       drinkParRender.push(
-        <li key={everyone[i] + "BuyFor" + [key]}>
-          <img src={billMurray[everyone[i]]} alt={everyone[i] + " logo"}></img>{" "}
+        <li
+          key={everyone[i] + "BuyFor" + [key]}
+          className="summary-detail-item"
+        >
+          <img src={billMurray[everyone[i]]} alt={everyone[i] + " logo"}></img>
           {everyone[i]} purchased {occurrences[key]} drinks for{" "}
           <img src={billMurray[key]} alt={[key] + " logo"}></img> {[key]}
         </li>
