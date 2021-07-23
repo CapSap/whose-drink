@@ -1,6 +1,21 @@
 * {
   box-sizing: border-box;
+  overflow-wrap: break-word;
 }
+
+:root {
+  --purple-light: #743eac;
+  --purple-mid: #533ba3;
+  --blue: #97bbe8;
+  --pink: #b058c6;
+
+  --title: #321a47;
+  --subtitle: var(--pink);
+  --card-background: #8aa8fa;
+  --card-maxwidth: 1100px;
+  --background: #dfd7f8;
+}
+
 textarea,
 input {
   font-family: inherit;
@@ -21,6 +36,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5em;
+  background-color: var(--background);
 }
 
 p {
@@ -30,13 +46,15 @@ h1,
 h2,
 h3 {
   text-align: center;
+  color: var(--title);
 }
 
 img {
-  height: 30px;
-  width: 30px;
-  justify-content: center;
-  align-items: center;
+  max-height: 30px;
+  max-width: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 3px;
 }
 
 /* add people css */
@@ -50,8 +68,10 @@ img {
   gap: 1em;
 }
 .add-people-item {
-  flex: 1 1 40%;
-  padding: 1em 0 1em 0;
+  flex: 0 1 40%;
+  padding: 1em;
+  background-color: rgb(255, 225, 168);
+  box-shadow: 0.2em 0.2em grey;
 }
 .add-people-item label {
   display: block;
@@ -65,6 +85,15 @@ img {
 }
 
 /* RoundRecorder css */
+
+.record-round-container {
+  background-color: var(--card-background);
+  max-width: var(--card-maxwidth);
+  margin: auto;
+}
+.record-round-container h2 {
+  padding-top: 10px;
+}
 
 .recorder-container {
   display: flex;
@@ -112,20 +141,20 @@ img {
 /* summary  */
 .drink-summary {
   margin: auto;
-  max-width: 1300px;
+  max-width: var(--card-maxwidth);
+  background-color: var(--card-background);
 }
 .drink-summary h2 {
   font-size: 2rem;
+  padding-top: 1em;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
   padding-left: 19.9%;
   padding-right: 19.9%;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
-
 li {
-  border: 1px solid aqua;
+  margin: 10px 10px;
 }
