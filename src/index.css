@@ -13,7 +13,7 @@
   --subtitle: var(--pink);
   --card-background: #8aa8fa;
   --card-maxwidth: 1100px;
-  --background: #white;
+  --background: #dfd7f8;
 }
 
 textarea,
@@ -72,6 +72,7 @@ img {
   padding: 1em;
   background-color: rgb(255, 225, 168);
   box-shadow: 0.2em 0.2em grey;
+  max-width: 540px;
 }
 .add-people-item label {
   display: block;
