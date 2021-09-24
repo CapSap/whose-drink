@@ -11,6 +11,7 @@
 
   --title: #321a47;
   --subtitle: var(--pink);
+  --input-card-background: rgb(255, 225, 168); 
   --card-background: #8aa8fa;
   --card-maxwidth: 1100px;
   --background: #dfd7f8;
@@ -62,20 +63,22 @@ img {
 .add-people-container {
   display: flex;
   justify-content: center;
-  padding: 1.5em 10em;
+  padding: 1.5em 10em 0 10em;
   flex-wrap: wrap;
   text-align: center;
   gap: 1em;
 }
 .add-people-item {
+  display: flex;
   flex: 0 1 40%;
-  padding: 1em;
-  background-color: rgb(255, 225, 168);
+  padding: 1.2em;
+  background-color: var(--input-card-background);
   box-shadow: 0.2em 0.2em grey;
   max-width: 540px;
+  flex-wrap: wrap;
 }
 .add-people-item label {
-  display: block;
+  flex-basis: 100%;
 }
 .add-people-input {
   min-height: 4rem;
@@ -83,12 +86,13 @@ img {
   font-size: 1rem;
   font-family: inherit;
   padding: 0.4em;
+  flex-grow: 1;
 }
 
 /* RoundRecorder css */
 
 .record-round-container {
-  background-color: var(--card-background);
+  background-color: var(--input-card-background);
   max-width: var(--card-maxwidth);
   margin: auto;
 }
