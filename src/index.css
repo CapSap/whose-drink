@@ -4,12 +4,12 @@
 }
 
 :root {
-  --title: #321a47;
+  --title: #683409;
   --subtitle: var(--pink);
-  --input-card-background: rgb(255, 225, 168);
-  --card-background: #8aa8fa;
+  --input-card-background: #b7cf99;
+  --card-background: #4faaa7;
   --card-maxwidth: 1100px;
-  --background: #dfd7f8;
+  --background: #e8df9c;
   --card-shadow-small: 0.2em 0.2em 0.1em grey;
   --card-shadow-big: 0.3em 0.3em 0.2em grey;
 }
