@@ -4,11 +4,6 @@
 }
 
 :root {
-  --purple-light: #743eac;
-  --purple-mid: #533ba3;
-  --blue: #97bbe8;
-  --pink: #b058c6;
-
   --title: #321a47;
   --subtitle: var(--pink);
   --input-card-background: rgb(255, 225, 168);
@@ -78,6 +73,7 @@ img {
   box-shadow: var(--card-shadow-small);
   max-width: 540px;
   flex-wrap: wrap;
+  border-radius: 0.4em;
 }
 .add-people-item label {
   flex-basis: 100%;
@@ -98,6 +94,7 @@ img {
   max-width: var(--card-maxwidth);
   margin: auto;
   box-shadow: var(--card-shadow-big);
+  border-radius: 0.4em;
 }
 .record-round-container h2 {
   padding-top: 10px;
@@ -136,6 +133,7 @@ img {
 .show-hide-btn {
   margin: auto auto 1em auto;
   display: block;
+  box-shadow: 0.1em 0.1em 0.1em grey, -0.1em 0.1em 0.1em grey;
 }
 
 .round-display {
@@ -146,10 +144,11 @@ img {
   justify-content: center;
 }
 .round-display-item {
-  padding: 2em;
-  border: 10px solid rgb(99, 99, 187);
+  padding: 1.5em;
+  border: 2px solid rgb(99, 99, 187);
   flex: 0 1 20em;
-  background-color: #8aa8fa;
+  background-color: var(--card-background);
+  border-radius: 1em;
 }
 
 /* summary  */
@@ -159,6 +158,7 @@ img {
   background-color: var(--card-background);
   box-shadow: 0.3em 0.3em 0.5em grey, -0.3em 0.3em 0.5em grey;
   margin-bottom: 20em;
+  border-radius: 0.4em;
 }
 .drink-summary h2 {
   font-size: 2rem;
