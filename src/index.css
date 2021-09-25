@@ -11,10 +11,12 @@
 
   --title: #321a47;
   --subtitle: var(--pink);
-  --input-card-background: rgb(255, 225, 168); 
+  --input-card-background: rgb(255, 225, 168);
   --card-background: #8aa8fa;
   --card-maxwidth: 1100px;
   --background: #dfd7f8;
+  --card-shadow-small: 0.2em 0.2em 0.1em grey;
+  --card-shadow-big: 0.3em 0.3em 0.2em grey;
 }
 
 textarea,
@@ -73,7 +75,7 @@ img {
   flex: 0 1 40%;
   padding: 1.2em;
   background-color: var(--input-card-background);
-  box-shadow: 0.2em 0.2em grey;
+  box-shadow: var(--card-shadow-small);
   max-width: 540px;
   flex-wrap: wrap;
 }
@@ -95,6 +97,7 @@ img {
   background-color: var(--input-card-background);
   max-width: var(--card-maxwidth);
   margin: auto;
+  box-shadow: var(--card-shadow-big);
 }
 .record-round-container h2 {
   padding-top: 10px;
@@ -121,9 +124,14 @@ img {
   min-height: 2em;
   padding: 0em;
   cursor: pointer;
+  box-shadow: 0.1em 0.1em 0.1em grey, -0.1em 0.1em 0.5em grey;
 }
 
 /* Round dispaly CSS */
+
+.round-display-container {
+  padding-top: 2em;
+}
 
 .show-hide-btn {
   margin: auto auto 1em auto;
@@ -139,8 +147,9 @@ img {
 }
 .round-display-item {
   padding: 2em;
-  border: 10px solid blue;
+  border: 10px solid rgb(99, 99, 187);
   flex: 0 1 20em;
+  background-color: #8aa8fa;
 }
 
 /* summary  */
@@ -148,6 +157,8 @@ img {
   margin: auto;
   max-width: var(--card-maxwidth);
   background-color: var(--card-background);
+  box-shadow: 0.3em 0.3em 0.5em grey, -0.3em 0.3em 0.5em grey;
+  margin-bottom: 20em;
 }
 .drink-summary h2 {
   font-size: 2rem;

@@ -20,12 +20,12 @@ function AddPeople(props) {
         ></input>
       </form>
       <form className="add-people-item">
-        <label htmlFor="createFriends">Your Mates: </label>
+        <label htmlFor="createFriends">Your Mates:</label>
 
         <textarea
           className="add-people-input"
           type="text"
-          placeholder="Who are you with? (seperate with a comma) e.g. Frank, billy, etc"
+          placeholder="Who are you with? (seperate with a comma) e.g. Frank, billy, bob"
           onChange={props.handleFriendChange}
         ></textarea>
       </form>
