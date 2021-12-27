@@ -23,6 +23,7 @@ function AddPeople(props) {
         <label htmlFor="createFriends">Your Mates:</label>
 
         <textarea
+          id="createFriends"
           className="add-people-input"
           type="text"
           placeholder="Who are you with? (seperate with a comma) e.g. Frank, billy, bob"
