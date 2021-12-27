@@ -1,13 +1,175 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --title: #683409;
+  --subtitle: var(--pink);
+  --input-card-background: #b7cf99;
+  --card-background: #69b1ae;
+  --card-maxwidth: 1100px;
+  --background: #f0d480;
+  --card-shadow-small: 0.2em 0.2em 0.1em grey;
+  --card-shadow-big: 0.3em 0.3em 0.2em grey;
+}
+
+textarea,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  min-height: inherit;
+  min-width: inherit;
+  margin: inherit;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
+  background-color: var(--background);
+}
+
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--title);
+}
+
+img {
+  max-height: 45px;
+  max-width: 45px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+/* add people css */
+
+.add-people-container {
+  display: flex;
+  justify-content: center;
+  padding: 1.5em 10em 0 10em;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1em;
+}
+.add-people-item {
+  display: flex;
+  flex: 0 1 40%;
+  padding: 1.2em;
+  background-color: var(--input-card-background);
+  box-shadow: var(--card-shadow-small);
+  max-width: 540px;
+  flex-wrap: wrap;
+  border-radius: 0.4em;
+}
+.add-people-item label {
+  flex-basis: 100%;
+}
+.add-people-input {
+  min-height: 4rem;
+  min-width: 20rem;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.4em;
+  flex-grow: 1;
+}
+
+/* RoundRecorder css */
+
+.record-round-container {
+  background-color: var(--input-card-background);
+  max-width: var(--card-maxwidth);
+  margin: auto;
+  box-shadow: var(--card-shadow-big);
+  border-radius: 0.4em;
+}
+.record-round-container h2 {
+  padding-top: 10px;
+}
+
+.recorder-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 10%;
+  padding-bottom: 1em;
+}
+
+.recorder-item {
+  flex-basis: 50%;
+}
+.recorder-item div {
+  padding-left: 40%;
+}
+.recorder-button {
+  flex: 1 0 60%;
+  font-size: 1.5em;
+  margin: 1em 12.25%;
+  min-height: 2em;
+  padding: 0em;
+  cursor: pointer;
+  box-shadow: 0.1em 0.1em 0.1em grey, -0.1em 0.1em 0.5em grey;
+}
+
+/* Round dispaly CSS */
+
+.round-display-container {
+  padding-top: 2em;
+}
+
+.show-hide-btn {
+  margin: auto auto 1em auto;
+  display: block;
+  box-shadow: 0.1em 0.1em 0.1em grey, -0.1em 0.1em 0.1em grey;
+}
+
+.round-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  justify-content: center;
+}
+.round-display-item {
+  padding: 1.5em;
+  border: 2px solid rgb(99, 99, 187);
+  flex: 0 1 20em;
+  background-color: var(--card-background);
+  border-radius: 1em;
+}
+
+/* summary  */
+.drink-summary {
+  margin: auto;
+  max-width: var(--card-maxwidth);
+  background-color: var(--card-background);
+  box-shadow: 0.3em 0.3em 0.5em grey, -0.3em 0.3em 0.5em grey;
+  margin-bottom: 20em;
+  border-radius: 0.4em;
+}
+.drink-summary h2 {
+  font-size: 2rem;
+  padding-top: 1em;
+}
+
+ul {
+  list-style-type: none;
+
+  font-size: 1.3rem;
+}
+li {
+  margin: 10px 10px;
 }
