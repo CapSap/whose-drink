@@ -1,9 +1,10 @@
 function RecordRound(props) {
   const drinkBuyer = [
     <div key="buyerbuyer">
-      <label>
+      <label htmlFor={props.userName}>
         {" "}
         <input
+          id={props.userName}
           type="radio"
           value={props.userName}
           name="buyer"
@@ -15,9 +16,14 @@ function RecordRound(props) {
     ...props.friendsArray.map((friendsName) => {
       return (
         <div key={friendsName + "B"}>
-          <label>
+          <label htmlFor={friendsName}>
             {" "}
-            <input type="radio" value={friendsName} name="buyer" />{" "}
+            <input
+              id={friendsName}
+              type="radio"
+              value={friendsName}
+              name="buyer"
+            />{" "}
             {friendsName}
           </label>
         </div>
@@ -27,9 +33,10 @@ function RecordRound(props) {
 
   const drinkReciever = [
     <div key="buyer">
-      <label>
+      <label htmlFor={props.userName}>
         {" "}
         <input
+          id={props.userName}
           type="checkbox"
           value={props.userName}
           name="reciever"
@@ -40,8 +47,13 @@ function RecordRound(props) {
     ...props.friendsArray.map((friendsName) => {
       return (
         <div key={friendsName + "R"}>
-          <label>
-            <input type="checkbox" value={friendsName} name="reciever" />{" "}
+          <label htmlFor={friendsName}>
+            <input
+              id={friendsName}
+              type="checkbox"
+              value={friendsName}
+              name="reciever"
+            />{" "}
             {friendsName}
           </label>
         </div>
